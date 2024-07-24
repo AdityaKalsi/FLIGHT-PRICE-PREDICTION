@@ -1,0 +1,130 @@
+{% extends 'layout.html '%}
+
+
+{% block content %}
+<div class="form">
+    <div class = 'container'>
+        <h1>Predict the Price of your flight</h1>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <div class="items">
+                    <div>
+                        {{ form.airline.label }}
+                        {{ form.airline }}
+                        {% if error in form.airline.errors %}
+                            {% for error in form.airline.errors %}
+                                <div>
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>
+                        {{ form.date_of_journey.label }}
+                        {{ form.date_of_journey }}
+                        {% if error in form.date_of_journey.errors %}
+                            {% for error in form.date_of_journey.errors %}
+                                <div>
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>
+                        {{ form.source.label }}
+                        {{ form.source }}
+                        {% if error in form.source.errors %}
+                            {% for error in form.source.errors %}
+                                <div>
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>
+                        {{ form.destination.label }}
+                        {{ form.destination }}
+                        {% if error in form.destination.errors %}
+                            {% for error in form.destination.errors %}
+                                <div>
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>
+                        {{ form.dep_time.label }}
+                        {{ form.dep_time }}
+                        {% if error in form.dep_time.errors %}
+                            {% for error in form.dep_time.errors %}
+                                <div>
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>
+                        {{ form.arrival_time.label }}
+                        {{ form.arrival_time }}
+                        {% if error in form.arrival_time.errors %}
+                            {% for error in form.arrival_time.errors %}
+                                <div>
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>
+                        {{ form.duration.label }}
+                        {{ form.duration }}
+                        {% if error in form.duration.errors %}
+                            {% for error in form.duration.errors %}
+                                <div>
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>
+                        {{ form.total_stops.label }}
+                        {{ form.total_stops }}
+                        {% if error in form.total_stops.errors %}
+                            {% for error in form.total_stops.errors %}
+                                <div>
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>
+                        {{ form.additional_info.label }}
+                        {{ form.additional_info }}
+                        {% if error in form.additional_info.errors %}
+                            {% for error in form.additional_info.errors %}
+                                <div>
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <br>
+                    <button class="btn">
+                            {{ form.submit }}
+                    </button>
+            </div>
+        </form>
+    </div>
+    <div class="mssg">
+        {{ message }}
+    </div>
+</div>
+{% endblock content %}
+
